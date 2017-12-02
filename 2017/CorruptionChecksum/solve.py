@@ -4,7 +4,7 @@ from itertools import permutations
 
 
 def read(problem):
-    with open(problem + '.txt') as f:
+    with open(problem + '.tsv') as f:
         return f.read().strip()
 
 
@@ -17,14 +17,9 @@ def div_checksum(table):
 
 
 if __name__ == '__main__':
-    table1 = [[int(s) for s in row.split('\t')]
-             for row in read('partone').split('\n')]
+    spreadsheet = [[int(s) for s in row.split('\t')] for row in read('spreadsheet').split('\n')]
 
-    print(f'Part One: {diff_checksum(table1)}')
-
-    table2 = [[int(s) for s in row.split('\t')]
-              for row in read('parttwo').split('\n')]
-
-    print(f'Part Two: {diff_checksum(table2)}')
+    print(f'Part One: {diff_checksum(spreadsheet)}')
+    print(f'Part Two: {div_checksum(spreadsheet)}')
 
 
