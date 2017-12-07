@@ -27,7 +27,7 @@ func input() ([]int) {
 
 func main() {
 	state := input()
-	
+
 	redistributions := findInfiniteLoop(state, false)
 	fmt.Printf("Infinite Loop Detected after %v redistribution cycles.\n", redistributions)
 
